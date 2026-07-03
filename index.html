@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpeakSmart — Find Your Voice | University of Ottawa</title>
+  <meta name="description" content="SpeakSmart is a student-led club at the University of Ottawa empowering students through public speaking, debate, and communication skills training. All students welcome." />
+  <link rel="icon" type="image/svg+xml" href="/assets/speaksmart_logo.svg" />
+  <meta property="og:title" content="SpeakSmart — Find Your Voice" />
+  <meta property="og:description" content="A student-led club at the University of Ottawa building confidence, leadership & communication. Public speaking · Debate · Skills training. All students welcome." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/speaksmart_logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__word" aria-hidden="true">
+        <span>S</span><span>p</span><span>e</span><span>a</span><span>k</span><span class="preloader__accent">S</span><span class="preloader__accent">m</span><span class="preloader__accent">a</span><span class="preloader__accent">r</span><span class="preloader__accent">t</span>
+      </div>
+      <div class="preloader__count" id="preloaderCount">0</div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#top" data-cursor="hover">
+      <img src="/assets/speaksmart_logo.svg" alt="SpeakSmart logo" />
+      <span>SpeakSmart</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#about" data-cursor="hover">About</a>
+      <a href="#pillars" data-cursor="hover">What We Do</a>
+      <a href="#founder" data-cursor="hover">Founder</a>
+      <a href="#team" data-cursor="hover">Team</a>
+      <a href="#join" class="nav__cta" data-cursor="hover">Join Us</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <canvas id="particleCanvas" class="hero__canvas"></canvas>
+      <div class="hero__content">
+        <p class="hero__eyebrow"><span class="hero__dot"></span> Student-led · University of Ottawa</p>
+        <h1 class="hero__title">
+          <span class="hero__line"><span class="hero__line-inner">Find</span></span>
+          <span class="hero__line"><span class="hero__line-inner">Your <em>Voice.</em></span></span>
+        </h1>
+        <p class="hero__sub" id="heroSub">A space to build confidence, leadership &amp; communication. Public speaking · Debate · Skills training. All students welcome.</p>
+        <div class="hero__actions">
+          <a href="#join" class="btn btn--solid magnetic" data-cursor="hover"><span>Become a Member</span></a>
+          <a href="#about" class="btn btn--ghost magnetic" data-cursor="hover"><span>Discover the Club</span></a>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" id="scrollHint">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack">
+        <span>Public Speaking — Debate — Leadership — Confidence — Interviews — Presentations — Mentorship — </span><span>Public Speaking — Debate — Leadership — Confidence — Interviews — Presentations — Mentorship — </span>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about__inner">
+        <p class="section-label reveal">01 — Who We Are</p>
+        <h2 class="about__statement" id="aboutStatement">
+          We believe strong communication is the foundation of academic success, leadership, and professional growth — and that every student deserves the opportunity to develop that strength.
+        </h2>
+        <div class="about__cols">
+          <p class="reveal">SpeakSmart is a student-led club at the University of Ottawa dedicated to empowering the voices of today’s students. Through interactive workshops, guest speakers, and engaging events, we create a supportive space where students can practice, improve, and discover their voice.</p>
+          <p class="reveal">Whether you’re preparing for a class presentation, leading a group project, practicing for an interview, or simply hoping to express your ideas more clearly — this is the space for you. All faculties, all levels of experience.</p>
+        </div>
+        <div class="about__stats">
+          <div class="stat reveal"><span class="stat__num" data-count="100">0</span><span class="stat__pct">%</span><p>Students welcome — every faculty, every level</p></div>
+          <div class="stat reveal"><span class="stat__num" data-count="4">0</span><span class="stat__pct">+</span><p>Formats: workshops, speakers, mentorship &amp; more</p></div>
+          <div class="stat reveal"><span class="stat__num" data-count="1">0</span><span class="stat__pct"></span><p>Voice that matters most — yours</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars -->
+    <section class="pillars" id="pillars">
+      <div class="pillars__head">
+        <p class="section-label reveal">02 — What We Do</p>
+        <h2 class="pillars__title reveal">Grow. Express. <em>Lead.</em></h2>
+      </div>
+      <div class="pillars__list">
+        <article class="pillar" data-cursor="expand">
+          <span class="pillar__index">01</span>
+          <h3 class="pillar__name">Workshops</h3>
+          <p class="pillar__desc">Hands-on sessions where you actually get up and speak. Practice presentations, impromptu speaking, storytelling and vocal delivery in a supportive room.</p>
+          <span class="pillar__arrow">→</span>
+        </article>
+        <article class="pillar" data-cursor="expand">
+          <span class="pillar__index">02</span>
+          <h3 class="pillar__name">Guest Speakers</h3>
+          <p class="pillar__desc">Learn from professionals, professors and student leaders who use communication every day — and ask them anything.</p>
+          <span class="pillar__arrow">→</span>
+        </article>
+        <article class="pillar" data-cursor="expand">
+          <span class="pillar__index">03</span>
+          <h3 class="pillar__name">Debate &amp; Discussion</h3>
+          <p class="pillar__desc">Sharpen your thinking on your feet. Structured debates and open discussions that build clarity, logic and persuasive confidence.</p>
+          <span class="pillar__arrow">→</span>
+        </article>
+        <article class="pillar" data-cursor="expand">
+          <span class="pillar__index">04</span>
+          <h3 class="pillar__name">Mentorship</h3>
+          <p class="pillar__desc">Get paired with experienced members for interview prep, class presentations, and building your professional voice one conversation at a time.</p>
+          <span class="pillar__arrow">→</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Events: horizontal scroll gallery -->
+    <section class="events" id="events">
+      <div class="events__pin">
+        <div class="events__head">
+          <p class="section-label reveal">03 — Signature Events</p>
+          <h2 class="events__title reveal">Where it <em>happens.</em></h2>
+        </div>
+        <div class="events__track" id="eventsTrack">
+          <article class="event-card" data-cursor="expand">
+            <span class="event-card__no">(01)</span>
+            <h3>Speech<br />Clinics</h3>
+            <p>Small-group sessions where you deliver, get feedback, and deliver again. The fastest way to sharpen a talk.</p>
+            <span class="event-card__tag">Practice</span>
+          </article>
+          <article class="event-card" data-cursor="expand">
+            <span class="event-card__no">(02)</span>
+            <h3>Debate<br />Nights</h3>
+            <p>Pick a side, build a case, think on your feet. Structured rounds with a supportive crowd.</p>
+            <span class="event-card__tag">Compete</span>
+          </article>
+          <article class="event-card" data-cursor="expand">
+            <span class="event-card__no">(03)</span>
+            <h3>Guest Speaker<br />Panels</h3>
+            <p>Professionals, professors, and student leaders share how they use communication every day — then take your questions.</p>
+            <span class="event-card__tag">Learn</span>
+          </article>
+          <article class="event-card" data-cursor="expand">
+            <span class="event-card__no">(04)</span>
+            <h3>Networking<br />Seminars</h3>
+            <p>Practice the professional conversations that open doors — introductions, small talk, and following up.</p>
+            <span class="event-card__tag">Connect</span>
+          </article>
+          <article class="event-card" data-cursor="expand">
+            <span class="event-card__no">(05)</span>
+            <h3>Confidence<br />Workshops</h3>
+            <p>Nerves are normal. Learn the techniques that turn anxiety into presence, one exercise at a time.</p>
+            <span class="event-card__tag">Grow</span>
+          </article>
+          <article class="event-card event-card--cta" data-cursor="hover">
+            <h3>Every event,<br />aligned with our<br /><em>mission.</em></h3>
+            <a href="#join" class="btn btn--solid magnetic" data-cursor="hover"><span>Come to One</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="founder" id="founder">
+      <div class="founder__media reveal-img">
+        <img src="/assets/founder-headshot.PNG" alt="Founder of SpeakSmart" id="founderImg" />
+        <div class="founder__frame"></div>
+      </div>
+      <div class="founder__text">
+        <p class="section-label reveal">04 — The Founder</p>
+        <h2 class="founder__quote reveal">“Expressing yourself clearly is the key to success — in academics, in your career, and in life.”</h2>
+        <p class="founder__body reveal">SpeakSmart was founded on a simple conviction: every student has something worth saying, and deserves the tools and the stage to say it well. What started as a belief is now a growing community at the University of Ottawa.</p>
+        <p class="founder__sig reveal">— Founder, SpeakSmart</p>
+      </div>
+    </section>
+
+    <!-- Constitution -->
+    <section class="constitution" id="constitution">
+      <div class="constitution__inner">
+        <p class="section-label reveal">05 — Our Constitution</p>
+        <div class="constitution__head">
+          <h2 class="constitution__title reveal">Built on <em>principle.</em></h2>
+          <p class="constitution__intro reveal">Founded May 9, 2025, SpeakSmart is governed by a ratified constitution. Four values anchor everything we run — every workshop, every debate, every event.</p>
+        </div>
+
+        <div class="values">
+          <div class="value" data-cursor="hover">
+            <span class="value__num">2.2.1</span>
+            <h3>Clarity</h3>
+            <p>Facilitating precise and articulate speech practices.</p>
+          </div>
+          <div class="value" data-cursor="hover">
+            <span class="value__num">2.2.2</span>
+            <h3>Confidence</h3>
+            <p>Providing tools and support to improve and strengthen public speaking.</p>
+          </div>
+          <div class="value" data-cursor="hover">
+            <span class="value__num">2.2.3</span>
+            <h3>Inclusivity</h3>
+            <p>Ensuring all students, regardless of background, can thrive in the club.</p>
+          </div>
+          <div class="value" data-cursor="hover">
+            <span class="value__num">2.2.4</span>
+            <h3>Leadership</h3>
+            <p>Promoting student leadership through speaking opportunities and mentorship.</p>
+          </div>
+        </div>
+
+        <div class="articles">
+          <details class="article-item reveal">
+            <summary data-cursor="hover"><span class="article-item__no">Art. 5</span> Membership <span class="article-item__icon">+</span></summary>
+            <p>Membership is open and free to all undergraduate students from any faculty or program at the University of Ottawa. You become a member upon registration with SpeakSmart executives — and attending just one event per semester keeps you active.</p>
+          </details>
+          <details class="article-item reveal">
+            <summary data-cursor="hover"><span class="article-item__no">Art. 7</span> Events <span class="article-item__icon">+</span></summary>
+            <p>Speech Clinics, Debate Nights, Guest Speaker Panels, Networking Seminars, and Confidence Building Workshops — every event aligned with the club’s mission and values.</p>
+          </details>
+          <details class="article-item reveal">
+            <summary data-cursor="hover"><span class="article-item__no">Art. 3</span> Leadership Team <span class="article-item__icon">+</span></summary>
+            <p>An elected executive of eight: President, VP Internal, VP External, VP Communications, VP Francophone Affairs &amp; Equity, VP Events, VP Finance, and VP Marketing — each serving a one-year term.</p>
+          </details>
+          <details class="article-item reveal">
+            <summary data-cursor="hover"><span class="article-item__no">Art. 8</span> Elections <span class="article-item__icon">+</span></summary>
+            <p>Executive selection runs annually from late March to late June through a formal application process, open to all registered undergraduate members.</p>
+          </details>
+        </div>
+
+        <div class="constitution__cta reveal">
+          <a href="/assets/speaksmart-constitution.pdf" download class="btn btn--ghost magnetic" data-cursor="hover"><span>Download the Full Constitution ↓</span></a>
+          <p class="constitution__note">Bilingual document — English &amp; français. Last updated April 21, 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team structure -->
+    <section class="team" id="team">
+      <div class="team__inner">
+        <p class="section-label reveal">06 — The Team</p>
+        <div class="team__head">
+          <h2 class="team__title reveal">Eight seats.<br /><em>One voice.</em></h2>
+          <p class="team__intro reveal">SpeakSmart is run by an elected executive of eight, each serving a one-year term. Elections open every spring to all registered members — one of these seats could be yours.</p>
+        </div>
+
+        <div class="org">
+          <div class="org__president">
+            <article class="role role--president" data-cursor="hover">
+              <span class="role__num">3.6.1</span>
+              <h3 class="role__name">President</h3>
+              <p class="role__desc">Oversees all club operations, chairs meetings, represents the club externally, and ensures constitutional compliance.</p>
+            </article>
+          </div>
+          <div class="org__stem" aria-hidden="true"></div>
+          <div class="org__grid">
+            <article class="role" data-cursor="hover">
+              <span class="role__num">3.6.2</span>
+              <h3 class="role__name">VP Internal</h3>
+              <p class="role__desc">Maintains documentation, registration lists, club minutes, and internal communications. Signing officer.</p>
+            </article>
+            <article class="role" data-cursor="hover">
+              <span class="role__num">3.6.3</span>
+              <h3 class="role__name">VP External</h3>
+              <p class="role__desc">Builds partnerships with organizations and faculties, handles outreach, and supports speaker acquisition.</p>
+            </article>
+            <article class="role" data-cursor="hover">
+              <span class="role__num">3.6.4</span>
+              <h3 class="role__name">VP Communications</h3>
+              <p class="role__desc">Develops content for social media, marketing materials, club branding, and newsletters.</p>
+            </article>
+            <article class="role" data-cursor="hover">
+              <span class="role__num">3.6.5</span>
+              <h3 class="role__name">VP Francophone Affairs &amp; Equity</h3>
+              <p class="role__desc">Provides bilingual content and French programming while keeping every event inclusive, safe, and accessible.</p>
+            </article>
+            <article class="role" data-cursor="hover">
+              <span class="role__num">3.6.6</span>
+              <h3 class="role__name">VP Events</h3>
+              <p class="role__desc">Coordinates all event logistics, speaker sessions, debates, and skill-building workshops.</p>
+            </article>
+            <article class="role" data-cursor="hover">
+              <span class="role__num">3.6.7</span>
+              <h3 class="role__name">VP Finance</h3>
+              <p class="role__desc">Manages budgets, funding proposals, and club expenses. Signing officer.</p>
+            </article>
+            <article class="role" data-cursor="hover">
+              <span class="role__num">3.6.8</span>
+              <h3 class="role__name">VP Marketing</h3>
+              <p class="role__desc">Oversees promotion and branding, coordinates event marketing, and works to grow membership and engagement.</p>
+            </article>
+            <article class="role role--open" data-cursor="hover">
+              <span class="role__num">Art. 8</span>
+              <h3 class="role__name">This could be you</h3>
+              <p class="role__desc">Executive selection runs every spring, open to all registered members. Watch for applications between March and June.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join CTA -->
+    <section class="join" id="join">
+      <div class="join__inner">
+        <p class="section-label section-label--light reveal">07 — Join Us</p>
+        <h2 class="join__title" id="joinTitle">Your voice<br /><em>belongs here.</em></h2>
+        <p class="join__sub reveal">All students welcome — no experience needed. Come to one event and see for yourself.</p>
+        <a href="mailto:speaksmart.uottawa@gmail.com" class="btn btn--light magnetic" data-cursor="hover"><span>Get in Touch</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <img src="/assets/speaksmart_logo.svg" alt="" />
+      <span>SpeakSmart</span>
+    </div>
+    <div class="footer__links">
+      <a href="mailto:speaksmart.uottawa@gmail.com" class="footer__mail" data-cursor="hover">speaksmart.uottawa@gmail.com</a>
+      <a href="https://www.instagram.com/speaksmart.uottawa" target="_blank" rel="noopener" data-cursor="hover">Instagram ↗</a>
+      <a href="/assets/speaksmart-constitution.pdf" download data-cursor="hover">Constitution ↓</a>
+    </div>
+    <p>Student-led club · University of Ottawa</p>
+    <p class="footer__fine">© 2026 SpeakSmart. Grow, express, lead.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
