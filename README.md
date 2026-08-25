@@ -38,7 +38,7 @@ Drop the new file into `public/assets/` **using the exact same filename** as
 the old one:
 
 - Logo: `speaksmart_logo.svg`
-- Founder photo: `founder-headshot.PNG`
+- Founder photo: `founder-headshot.jpg`
 - Constitution: `speaksmart-constitution.pdf`
 
 Same name = nothing else needs to change.

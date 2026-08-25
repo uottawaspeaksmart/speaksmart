@@ -237,8 +237,8 @@ gsap.from("#founderImg", {
 });
 gsap.from(".founder__frame", {
   opacity: 0,
-  x: -10,
-  y: -10,
+  x: 0,
+  y: 0,
   duration: 1,
   delay: 0.4,
   ease: "power3.out",
