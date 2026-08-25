@@ -481,16 +481,44 @@ em { font-style: italic; color: var(--red); }
 
 /* ---------- Footer ---------- */
 .footer {
-  padding: 3rem clamp(1.5rem, 6vw, 6rem);
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 4rem clamp(1.5rem, 6vw, 6rem) 2.5rem;
   font-size: 0.85rem; color: rgba(28, 20, 16, 0.6);
 }
-.footer__brand { display: flex; align-items: center; gap: 0.5rem; font-family: var(--serif); font-weight: 400; color: var(--ink); font-size: 1rem; }
-.footer__brand img { width: 26px; height: 26px; }
-.footer__fine { font-size: 0.78rem; }
-.footer__links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
-.footer__links a { color: var(--red); text-decoration: none; font-weight: 500; }
-.footer__links a:hover { text-decoration: underline; }
+.footer__top,
+.footer__bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.2rem 2.5rem; flex-wrap: wrap;
+}
+.footer__top { padding-bottom: 2rem; }
+.footer__bottom {
+  padding-top: 1.5rem; border-top: 1px solid rgba(28, 20, 16, 0.12);
+  font-size: 0.8rem;
+}
+.footer__bottom p { margin: 0; line-height: 1.5; }
+
+.footer__brand {
+  display: flex; align-items: center; gap: 0.55rem;
+  font-family: var(--serif); font-weight: 400; font-size: 1.15rem;
+  color: var(--ink); text-decoration: none; line-height: 1;
+}
+.footer__brand img { width: 28px; height: 28px; display: block; }
+
+.footer__links { display: flex; align-items: center; gap: 0.6rem 2rem; flex-wrap: wrap; }
+.footer__links a {
+  color: var(--red); text-decoration: none; font-weight: 500; line-height: 1;
+  position: relative;
+}
+.footer__links a::after {
+  content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 100%;
+  background: var(--red); transform: scaleX(0); transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.footer__links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+@media (max-width: 700px) {
+  .footer__top, .footer__bottom { justify-content: flex-start; }
+  .footer__links { gap: 0.7rem 1.5rem; }
+}
 
 /* ---------- Reveal defaults (GSAP takes over) ---------- */
 .reveal { opacity: 0; transform: translateY(40px); }
