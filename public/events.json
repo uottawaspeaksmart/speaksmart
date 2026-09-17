@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-10-02",
+    "time": "5:30 PM",
+    "title": "Fall Kickoff: Find Your Voice",
+    "titleFr": "Lancement d'automne : trouvez votre voix",
+    "location": "FSS 4007, University of Ottawa",
+    "description": "Meet the exec team, try a two-minute impromptu challenge, and find out what the year has in store. No experience needed.",
+    "descriptionFr": "Rencontrez l'équipe exécutive, relevez un défi d'improvisation de deux minutes et découvrez le programme de l'année. Aucune expérience requise.",
+    "link": ""
+  },
+  {
+    "date": "2026-10-23",
+    "time": "6:00 PM",
+    "title": "Debate Night: Campus Edition",
+    "titleFr": "Soirée de débat : édition campus",
+    "location": "STEM 117, University of Ottawa",
+    "description": "Structured rounds on light campus topics. Come to argue or come to watch.",
+    "descriptionFr": "Des joutes structurées sur des sujets légers du campus. Venez débattre ou simplement observer.",
+    "link": ""
+  },
+  {
+    "date": "2026-09-08",
+    "time": "5:00 PM",
+    "title": "Welcome Week Table",
+    "titleFr": "Kiosque de la semaine d'accueil",
+    "location": "Tabaret Lawn",
+    "description": "We met hundreds of new students and signed up our first members of the year.",
+    "descriptionFr": "Nous avons rencontré des centaines de nouveaux étudiants et accueilli nos premiers membres de l'année.",
+    "link": ""
+  }
+]

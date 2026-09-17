@@ -93,6 +93,11 @@ function preferredLang() {
   return navigator.language?.toLowerCase().startsWith("fr") ? "fr" : "en";
 }
 
+/* The language in use, for code that renders its own copy (the events list). */
+export function getLang() {
+  return current;
+}
+
 export function setLang(lang, { persist = true } = {}) {
   if (lang !== "en" && lang !== "fr") return;
   apply(lang);

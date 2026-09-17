@@ -28,6 +28,16 @@
     </div>
   </div>
 
+  <!-- Custom scrollbar: rail, section ticks and thumb are built by main.js -->
+  <div class="scrollbar" id="scrollbar" aria-hidden="true">
+    <div class="scrollbar__rail" id="scrollbarRail">
+      <div class="scrollbar__track"></div>
+      <div class="scrollbar__fill" id="scrollbarFill"></div>
+      <div class="scrollbar__thumb" id="scrollbarThumb"></div>
+    </div>
+    <div class="scrollbar__percent" id="scrollbarPercent">0</div>
+  </div>
+
   <!-- Custom cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
@@ -41,6 +51,7 @@
     <nav class="nav__links">
       <a href="#about" data-cursor="hover" data-fr="À propos">About</a>
       <a href="#pillars" data-cursor="hover" data-fr="Nos activités">What We Do</a>
+      <a href="#calendar" data-cursor="hover" data-fr="Calendrier">Events</a>
       <a href="#founder" data-cursor="hover" data-fr="Fondateur">Founder</a>
       <a href="#team" data-cursor="hover" data-fr="Équipe">Team</a>
       <button class="lang" id="langToggle" type="button" data-cursor="hover">
@@ -76,7 +87,8 @@
     <!-- Marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track" id="marqueeTrack">
-        <span data-fr="Art oratoire · Débat · Leadership · Confiance · Entrevues · Présentations · Mentorat · ">Public Speaking · Debate · Leadership · Confidence · Interviews · Presentations · Mentorship · </span><span data-fr="Art oratoire · Débat · Leadership · Confiance · Entrevues · Présentations · Mentorat · ">Public Speaking · Debate · Leadership · Confidence · Interviews · Presentations · Mentorship · </span>
+        <!-- One copy only: main.js tiles as many as the screen needs. -->
+        <span data-fr="Art oratoire · Débat · Leadership · Confiance · Entrevues · Présentations · Mentorat · ">Public Speaking · Debate · Leadership · Confidence · Interviews · Presentations · Mentorship · </span>
       </div>
     </div>
 
@@ -179,6 +191,27 @@
       </div>
     </section>
 
+    <!-- Calendar: upcoming events and the timeline of past ones.
+         Both lists are filled by main.js from the events sheet. -->
+    <section class="calendar" id="calendar">
+      <div class="calendar__inner">
+        <p class="section-label reveal" data-fr="04 / Calendrier">04 / What's On</p>
+        <div class="calendar__head">
+          <h2 class="calendar__title reveal" data-fr="Prochains <em>rendez-vous.</em>">Coming up <em>next.</em></h2>
+          <p class="calendar__intro reveal" data-fr="Tous les événements sont gratuits et ouverts à tous les étudiants. Venez à un seul et voyez par vous-même.">Every event is free and open to all students. Come to one and see for yourself.</p>
+        </div>
+
+        <div class="calendar__upcoming" id="calendarUpcoming"></div>
+
+        <p class="calendar__empty" id="calendarEmpty" hidden data-fr="Rien à l'affiche pour l'instant. Écrivez-nous et nous vous préviendrons dès l'annonce du prochain événement.">Nothing on the schedule right now. Send us a note and we'll tell you as soon as the next event is announced.</p>
+
+        <div class="timeline" id="calendarTimelineWrap" hidden>
+          <h3 class="timeline__title reveal" data-fr="Déjà passés">Already happened</h3>
+          <ol class="timeline__list" id="calendarPast"></ol>
+        </div>
+      </div>
+    </section>
+
     <!-- Founder -->
     <section class="founder" id="founder">
       <div class="founder__media reveal-img">
@@ -186,7 +219,7 @@
         <div class="founder__frame"></div>
       </div>
       <div class="founder__text">
-        <p class="section-label reveal" data-fr="04 / Le fondateur">04 / The Founder</p>
+        <p class="section-label reveal" data-fr="05 / Le fondateur">05 / The Founder</p>
         <h2 class="founder__quote reveal" data-fr="« S’exprimer clairement est la clé du succès : dans les études, dans la carrière et dans la vie. »">“Expressing yourself clearly is the key to success in academics, in your career, and in life.”</h2>
         <p class="founder__body reveal" data-fr="SpeakSmart est né d’une conviction simple : chaque étudiant a quelque chose à dire, et mérite les outils et la tribune pour bien le dire. Ce qui a commencé comme une conviction est aujourd’hui une communauté grandissante à l’Université d’Ottawa.">SpeakSmart was founded on a simple conviction: every student has something worth saying, and deserves the tools and the stage to say it well. What started as a belief is now a growing community at the University of Ottawa.</p>
         <p class="founder__sig reveal" data-fr="Rayan Saddiki, fondateur de SpeakSmart">Rayan Saddiki, Founder of SpeakSmart</p>
@@ -196,7 +229,7 @@
     <!-- Constitution -->
     <section class="constitution" id="constitution">
       <div class="constitution__inner">
-        <p class="section-label reveal" data-fr="05 / Notre constitution">05 / Our Constitution</p>
+        <p class="section-label reveal" data-fr="06 / Notre constitution">06 / Our Constitution</p>
         <div class="constitution__head">
           <h2 class="constitution__title reveal" data-fr="Fondé sur des <em>principes.</em>">Built on <em>principle.</em></h2>
           <p class="constitution__intro reveal" data-fr="Fondé le 9 mai 2025, SpeakSmart est régi par une constitution ratifiée. Quatre valeurs guident tout ce que nous organisons : chaque atelier, chaque débat, chaque événement.">Founded May 9, 2025, SpeakSmart is governed by a ratified constitution. Four values anchor everything we run: every workshop, every debate, every event.</p>
@@ -254,7 +287,7 @@
     <!-- Team structure -->
     <section class="team" id="team">
       <div class="team__inner">
-        <p class="section-label reveal" data-fr="06 / L’équipe">06 / The Team</p>
+        <p class="section-label reveal" data-fr="07 / L’équipe">07 / The Team</p>
         <div class="team__head">
           <h2 class="team__title reveal" data-fr="Huit sièges.<br /><em>Une seule voix.</em>">Eight seats.<br /><em>One voice.</em></h2>
           <p class="team__intro reveal" data-fr="SpeakSmart est dirigé par un exécutif élu de huit personnes, chacune pour un mandat d’un an. Les élections ont lieu chaque printemps et sont ouvertes à tous les membres inscrits. L’un de ces sièges pourrait être le vôtre.">SpeakSmart is run by an elected executive of eight, each serving a one-year term. Elections open every spring to all registered members. One of these seats could be yours.</p>
@@ -317,7 +350,7 @@
     <!-- Join CTA -->
     <section class="join" id="join">
       <div class="join__inner">
-        <p class="section-label section-label--light reveal" data-fr="07 / Adhérer">07 / Join Us</p>
+        <p class="section-label section-label--light reveal" data-fr="08 / Adhérer">08 / Join Us</p>
         <h2 class="join__title" id="joinTitle" data-fr="Votre voix<br /><em>a sa place ici.</em>">Your voice<br /><em>belongs here.</em></h2>
         <p class="join__sub reveal" data-fr="Tous les étudiants sont les bienvenus, aucune expérience requise. Venez à un événement et voyez par vous-même.">All students welcome, no experience needed. Come to one event and see for yourself.</p>
         <a href="mailto:speaksmart.uottawa@gmail.com" class="btn btn--light magnetic" data-cursor="hover"><span data-fr="Nous joindre">Get in Touch</span></a>

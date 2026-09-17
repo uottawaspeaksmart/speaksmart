@@ -28,9 +28,46 @@ for most changes.
 3. Change it, save the file.
 4. Publish (see below).
 
-**Examples of things you can safely change this way:** event names and
-descriptions, the mission text, stats, the founder quote, the email address,
-the Instagram link, section titles.
+**Examples of things you can safely change this way:** the mission text, stats,
+the founder quote, the email address, the Linktree link, section titles.
+
+(Events are **not** edited here — see the next section.)
+
+## Adding an event (no code, no publishing)
+
+Events live in a Google Sheet. Add a row and the site picks it up on its own,
+usually within about five minutes. **Upcoming and past are worked out from the
+date**, so an event moves into the "Already happened" timeline by itself the day
+after it runs. Nothing to move by hand, nothing to delete.
+
+**One-time setup** (do this once, on the club's Google account):
+
+1. Make a new Google Sheet with this header row, spelled exactly like this:
+
+   `Date | Time | Title | Title FR | Location | Description | Description FR | Link`
+
+   Only **Date** and **Title** are required; leave the rest blank if you like.
+   The FR columns are for the French version of the site. If you leave them
+   blank, French visitors see the English text.
+2. **File → Share → Publish to web**. Choose that sheet, pick
+   **Comma-separated values (.csv)**, and press **Publish**. Copy the link.
+3. Paste the link into `src/events.js`, between the quotes on the
+   `SHEET_CSV_URL` line, then publish the site once (see below). After that,
+   nobody needs to touch the code again.
+
+**Writing a row:**
+
+- **Date**: `2026-10-02` works best. `Oct 2, 2026` also works.
+- **Time**: free text, e.g. `5:30 PM`.
+- **Link**: an RSVP or sign-up link. Leave it blank and no button shows.
+
+The next event coming up is highlighted in red automatically. If there are no
+upcoming events, the section shows a short "nothing scheduled" note instead of
+looking broken.
+
+**If the sheet is unreachable**, the site falls back to `public/events.json`, so
+the page never breaks. That file also holds the sample events shown before the
+sheet is connected.
 
 ## How to swap an image or the constitution PDF
 
