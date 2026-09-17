@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { initParticles } from "./particles.js";
+import { initI18n } from "./i18n.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -147,23 +148,29 @@ gsap.ticker.add(() => {
 });
 
 /* ---------- About statement: word-by-word scrub ---------- */
+// Rebuilt whenever the language changes, since the split depends on the copy.
 const statement = document.getElementById("aboutStatement");
-statement.innerHTML = statement.textContent
-  .trim()
-  .split(/\s+/)
-  .map((w) => `<span class="word">${w}</span>`)
-  .join(" ");
-gsap.to("#aboutStatement .word", {
-  opacity: 1,
-  stagger: 0.06,
-  ease: "none",
-  scrollTrigger: {
-    trigger: "#aboutStatement",
-    start: "top 80%",
-    end: "bottom 45%",
-    scrub: 0.6,
-  },
-});
+let statementTween;
+function setupStatement() {
+  statementTween?.scrollTrigger?.kill();
+  statementTween?.kill();
+  statement.innerHTML = statement.textContent
+    .trim()
+    .split(/\s+/)
+    .map((w) => `<span class="word">${w}</span>`)
+    .join(" ");
+  statementTween = gsap.to("#aboutStatement .word", {
+    opacity: 1,
+    stagger: 0.06,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#aboutStatement",
+      start: "top 80%",
+      end: "bottom 45%",
+      scrub: 0.6,
+    },
+  });
+}
 
 /* ---------- Generic reveals ---------- */
 document.querySelectorAll(".reveal").forEach((el) => {
@@ -305,4 +312,15 @@ gsap.from(joinTitle, {
   duration: 1.2,
   ease: "power4.out",
   scrollTrigger: { trigger: "#join", start: "top 65%" },
+});
+
+/* ---------- Language toggle ---------- */
+// Runs last so every animation above exists before the copy can change.
+initI18n({
+  onSwap: () => {
+    setupStatement();
+    // Line lengths change with the language, so anything measured from the
+    // layout (pinned horizontal events track, scroll distances) is stale.
+    ScrollTrigger.refresh();
+  },
 });

@@ -98,6 +98,18 @@ em { font-style: italic; color: var(--red); }
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .nav__links a:not(.nav__cta):hover::after { transform: scaleX(1); transform-origin: left; }
+.lang {
+  display: inline-flex; align-items: center; gap: 0.1rem;
+  background: none; border: none; padding: 0.2rem 0; cursor: pointer;
+  font-family: var(--sans); font-size: 0.82rem; font-weight: 600;
+  line-height: 1; color: rgba(28, 20, 16, 0.35);
+}
+.lang__opt { padding: 0 0.2rem; transition: color 0.3s ease; }
+.lang__opt--active { color: var(--red); }
+.lang:hover .lang__opt:not(.lang__opt--active) { color: rgba(28, 20, 16, 0.6); }
+.lang__sep { opacity: 0.4; }
+.lang:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; border-radius: 4px; }
+
 .nav__cta {
   background: var(--red); color: var(--cream) !important;
   padding: 0.6rem 1.3rem; border-radius: 999px;
