@@ -14,9 +14,9 @@ for most changes.
 |---|---|---|
 | `index.html` | **All the words on the site** — every headline, paragraph, button | ✅ Yes — edit text freely |
 | `public/assets/` | Images & files: logo, founder photo, constitution PDF | ✅ Yes — swap files here |
-| `src/style.css` | Colors, fonts, spacing | ⚠️ Careful — small tweaks OK |
-| `src/main.js`, `src/particles.js` | Animations and the 3D particle logo | 🛑 Ask for help |
-| `node_modules/`, `dist/`, `.claude/` | Machine-generated stuff | 🛑 Never edit, never delete |
+| `src/style.css` | Colors, fonts, spacing | ⚠️ small tweaks OK |
+| `src/main.js`, `src/particles.js` | Animations and the 3D particle logo | 🛑 careful |
+| `node_modules/`, `dist/`, `.claude/` | Machine-generated stuff | 🛑 dont touch |
 
 ---
 
