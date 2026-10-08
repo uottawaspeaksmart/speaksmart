@@ -1,8 +1,9 @@
 # SpeakSmart Website — Owner's Manual
 
 The official site for **SpeakSmart**, the student-led communication club at the
-University of Ottawa. Live at https://uospeaksmart.vercel.app (and at uospeaksmart.com once the
-domain is connected).
+University of Ottawa. **Live at https://uospeaksmart.com** —
+`www.uospeaksmart.com` redirects there; `uospeaksmart.vercel.app` still serves
+the same site as a backup address.
 
 This guide is written for everyone on the team — **no coding experience needed**
 for most changes.
@@ -135,7 +136,7 @@ email rather than belonging to any one student.
 | Thing | Where it lives | What it does |
 |---|---|---|
 | Code | GitHub: `uottawaspeaksmart/speaksmart` | The site's files and full history |
-| Hosting | Vercel (free Hobby plan), project `speaksmart` | Builds and serves the site; redeploys on every push |
+| Hosting | Vercel (free Hobby plan), project `uospeaksmart` | Builds and serves the site; redeploys on every push |
 | Events | Google Sheet, published to the web as CSV | The event list the site reads (see "Adding an event") |
 | Domain | GoDaddy: `uospeaksmart.com` | The public address |
 
@@ -153,17 +154,22 @@ on file, so nobody gets charged automatically.
 name becomes available for anyone to buy. Put a reminder in the club calendar
 for **August 2029**, and mention it in every exec handover.
 
-### Connecting the domain in Vercel (one-time, already done or to redo)
+### How the domain is wired (done — for reference only)
 
-1. Vercel → the `speaksmart` project → **Settings → Domains** → add
-   `uospeaksmart.com`.
-2. Vercel shows the exact DNS records to enter. Copy them into GoDaddy under
-   **My Products → Domain → DNS**, or switch GoDaddy's nameservers to the ones
-   Vercel gives you and let Vercel handle DNS.
-3. HTTPS is issued automatically; nothing to buy from GoDaddy for that.
+Set up on 2026-10-07. Nothing to do here unless it has to be rebuilt.
 
-Use whatever values the Vercel screen shows at the time rather than any written
-down here — they change.
+- **Vercel → Domains** holds three entries: `uospeaksmart.com` on Production,
+  `www.uospeaksmart.com` as a 308 redirect to it, and the original
+  `uospeaksmart.vercel.app`.
+- **GoDaddy → DNS** has one record doing the work: an **A record** on `@`
+  pointing at Vercel. The `www` CNAME that GoDaddy creates by default points at
+  the bare domain and was left alone.
+- **HTTPS** is a Let's Encrypt certificate Vercel issues and renews by itself.
+  Nothing to buy from GoDaddy; decline their SSL upsells.
+
+If it ever needs redoing, add the domain in Vercel first and copy whatever DNS
+values that screen shows at the time — Vercel's IPs change, so don't trust the
+ones written here.
 
 ### If you ever take over this site
 
