@@ -1,7 +1,8 @@
 # SpeakSmart Website — Owner's Manual
 
 The official site for **SpeakSmart**, the student-led communication club at the
-University of Ottawa. Live at the Vercel URL (see "Publishing changes" below).
+University of Ottawa. Live at https://uospeaksmart.vercel.app (and at uospeaksmart.com once the
+domain is connected).
 
 This guide is written for everyone on the team — **no coding experience needed**
 for most changes.
@@ -40,7 +41,11 @@ usually within about five minutes. **Upcoming and past are worked out from the
 date**, so an event moves into the "Already happened" timeline by itself the day
 after it runs. Nothing to move by hand, nothing to delete.
 
-**One-time setup** (do this once, on the club's Google account):
+**The sheet is already set up and connected** — adding a row is all you need to
+do. The steps below are only for replacing it with a different sheet.
+
+<details>
+<summary>Setting up a new sheet from scratch</summary>
 
 1. Make a new Google Sheet with this header row, spelled exactly like this:
 
@@ -52,8 +57,9 @@ after it runs. Nothing to move by hand, nothing to delete.
 2. **File → Share → Publish to web**. Choose that sheet, pick
    **Comma-separated values (.csv)**, and press **Publish**. Copy the link.
 3. Paste the link into `src/events.js`, between the quotes on the
-   `SHEET_CSV_URL` line, then publish the site once (see below). After that,
-   nobody needs to touch the code again.
+   `SHEET_CSV_URL` line, and commit. The site picks it up on the next build.
+
+</details>
 
 **Writing a row:**
 
@@ -94,15 +100,21 @@ save files. Press `Ctrl+C` in Terminal to stop.
 
 ## Publishing changes to the live site
 
+**Editing a file on GitHub publishes it by itself.** Open the file here on
+github.com, click the pencil icon, make the change, and commit. Vercel rebuilds
+the site within a minute or two. Nothing else to run.
+
+If you're working on your own computer instead:
+
 ```bash
 cd ~/dev/speaksmart
-npx vercel --prod
+git add -A
+git commit -m "say what you changed"
+git push
 ```
 
-That's it — live in about a minute.
-
-*(If the project gets connected to GitHub later, publishing becomes automatic:
-every `git push` updates the live site.)*
+Same result: the push publishes it. Run `git pull` before you start, in case
+someone edited a file on github.com in the meantime.
 
 ---
 
@@ -113,6 +125,53 @@ every `git push` updates the live site.)*
 - Anything involving the animations or the particle logo
 - Something looks broken after an edit — don't panic, nothing is lost:
   `git checkout -- .` in Terminal undoes all unsaved-to-git changes
+
+## Accounts, hosting and the domain
+
+Everything below should live on the **club's Google account**
+(`speaksmart.uottawa@gmail.com`), so it passes to the next exec team with the
+email rather than belonging to any one student.
+
+| Thing | Where it lives | What it does |
+|---|---|---|
+| Code | GitHub: `uottawaspeaksmart/speaksmart` | The site's files and full history |
+| Hosting | Vercel (free Hobby plan), project `speaksmart` | Builds and serves the site; redeploys on every push |
+| Events | Google Sheet, published to the web as CSV | The event list the site reads (see "Adding an event") |
+| Domain | GoDaddy: `uospeaksmart.com` | The public address |
+
+**How a change reaches the public:** edit a file (on github.com or on your
+computer) → GitHub → Vercel rebuilds → live. Vercel is connected to the repo, so
+there is no separate "publish" step and no Vercel CLI needed.
+
+### The domain renewal — important
+
+The domain was registered in **October 2026 for three years**, so it is paid
+until **October 2029**. Auto-renew is intentionally **off** and no card is kept
+on file, so nobody gets charged automatically.
+
+**Someone must renew it before October 2029**, or the site goes dark and the
+name becomes available for anyone to buy. Put a reminder in the club calendar
+for **August 2029**, and mention it in every exec handover.
+
+### Connecting the domain in Vercel (one-time, already done or to redo)
+
+1. Vercel → the `speaksmart` project → **Settings → Domains** → add
+   `uospeaksmart.com`.
+2. Vercel shows the exact DNS records to enter. Copy them into GoDaddy under
+   **My Products → Domain → DNS**, or switch GoDaddy's nameservers to the ones
+   Vercel gives you and let Vercel handle DNS.
+3. HTTPS is issued automatically; nothing to buy from GoDaddy for that.
+
+Use whatever values the Vercel screen shows at the time rather than any written
+down here — they change.
+
+### If you ever take over this site
+
+1. Get the login for `speaksmart.uottawa@gmail.com`.
+2. That email is the GitHub, Vercel and GoDaddy account — check you can sign in
+   to all three.
+3. Confirm the events sheet is in that account's Google Drive.
+4. Check the domain's renewal date and who is responsible for paying it.
 
 ## Quick facts
 
