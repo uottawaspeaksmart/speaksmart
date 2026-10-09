@@ -34,6 +34,11 @@ em { font-style: italic; color: var(--red); }
   display: flex; align-items: center; justify-content: center;
 }
 .preloader__inner { text-align: center; }
+/* Failsafe: if the intro script never runs (error, blocked bundle), the
+   preloader would sit over the page forever. Fade it out after 8s so visitors
+   always reach the content. The normal GSAP exit happens around 3s. */
+.preloader { animation: preloaderFailsafe 0.4s linear 8s forwards; }
+@keyframes preloaderFailsafe { to { opacity: 0; visibility: hidden; pointer-events: none; } }
 .preloader__word {
   font-family: var(--serif); font-weight: 400;
   font-size: clamp(2.5rem, 8vw, 6rem);

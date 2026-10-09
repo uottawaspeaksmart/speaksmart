@@ -1,0 +1,5 @@
+# SpeakSmart — https://uospeaksmart.com
+User-agent: *
+Allow: /
+
+Sitemap: https://uospeaksmart.com/sitemap.xml
